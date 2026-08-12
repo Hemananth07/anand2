@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Box</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Search</h2>
+
+<input type="text" id="searchInput" placeholder="Enter a keyword">
+<button onclick="searchData()">Search</button>
+
+<p id="result"></p>
+
+<script>
+    const data = {
+        "apple": "Apple is a fruit.",
+        "banana": "Banana is yellow.",
+        "car": "Car is a vehicle.",
+        "dog": "Dog is a pet animal.",
+        "computer": "Computer is an electronic device."
+    };
+
+    function searchData() {
+        const input = document.getElementById("searchInput").value.trim().toLowerCase();
+        const result = document.getElementById("result");
+
+        if (data[input]) {
+            result.innerHTML = data[input];
+        } else {
+            result.innerHTML = "No exact result found.";
+        }
+    }
+</script>
+
+</body>
+</html>
